@@ -21,7 +21,7 @@ LIST = {}
 
 @app.on_message(filters.command(['start']))
 async def start(client, message):
- await message.reply_text(text =f"""Hello {message.from_user.first_name }I'm 𝐈𝐌𝐀𝐆𝐄 𝐓𝐎 𝐏𝐃𝐅 𝐁𝐎𝐓. 
+ await message.reply_text(text =f"""Hello {message.from_user.first_name }
 
 I can convert Image to PDF""",reply_to_message_id = message.message_id )
 
@@ -42,7 +42,7 @@ async def pdf(client,message):
  image = Image.open(file)
  img = image.convert('RGB')
  LIST[message.from_user.id].append(img)
- await ms.edit(f"{len(LIST[message.from_user.id])}Successfully added your Image . If you want to convert more Images to PDF, Send them one by one.\n\n **If your process was over, click here 👉 /convert** ")
+ await ms.edit(f"{len(LIST[message.from_user.id])} image added successfully. If you want to convert more Images to PDF, Send them one by one.\n\n **If your process was over, click here 👉 /convert** ")
  
 
 @app.on_message(filters.command(['convert']))
